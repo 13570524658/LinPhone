@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">LinPhone</string>
+    <string name="label_name">悦客呼</string>
+
+    <!--弹框-->
+    <string name="loding">正在加载网络...</string>
+    <!--通知栏-->
+    <string name="sevice_run">服务正在运行</string>
+</resources>
