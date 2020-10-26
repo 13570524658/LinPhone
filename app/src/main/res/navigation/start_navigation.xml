@@ -2,10 +2,9 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/start_navigation"
-    app:startDestination="@id/StartFragment">
+    app:startDestination="@id/startFragment">
     <fragment
-        android:id="@+id/StartFragment"
+        android:id="@+id/startFragment"
         android:name="com.zhengyuesoftware.linphone.kotlin.window.ui.start_module.start_window.view.fragment.StartFragment"
         android:label="StartFragment"
         tools:layout="@layout/fragment_start">
@@ -37,12 +36,5 @@
         android:name="com.zhengyuesoftware.linphone.kotlin.window.ui.main_module.main_window.view.fragment.MainFragment"
         android:label="MainFragment"
         tools:layout="@layout/fragment_main">
-        <action
-            android:id="@+id/next_action_OtherFragment"
-            app:destination="@+id/homePageActivity"
-            app:enterAnim="@anim/slide_in_right"
-            app:exitAnim="@anim/slide_out_left"
-            app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_right" />
     </fragment>
 </navigation>

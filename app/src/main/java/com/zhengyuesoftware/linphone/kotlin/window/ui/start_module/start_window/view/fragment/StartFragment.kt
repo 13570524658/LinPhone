@@ -45,7 +45,7 @@ class StartFragment: BaseViewModelFragment<StartFragmentViewModel>() {
         val args = Bundle()
         args.putString("myarg", "服务")
         val deeplink = findNavController().createDeepLink()
-            .setDestination(R.id.StartFragment)
+            .setDestination(R.id.startFragment)
             .setArguments(args)
             .createPendingIntent()
         val notificationManager =
