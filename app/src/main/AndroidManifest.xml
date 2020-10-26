@@ -118,7 +118,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LinPhone"
         tools:targetApi="n">
-        <activity android:name=".kotlin.window.ui.main_module.MainActivity">
+        <activity android:name=".kotlin.window.ui.start_module.start_window.view.activity.StartActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

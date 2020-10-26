@@ -2,7 +2,8 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/start_navigation">
+    android:id="@+id/start_navigation"
+    app:startDestination="@id/StartFragment">
     <fragment
         android:id="@+id/StartFragment"
         android:name="com.zhengyuesoftware.linphone.kotlin.window.ui.start_module.start_window.view.fragment.StartFragment"
