@@ -4,9 +4,12 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.NavHostFragment
 import com.gyf.immersionbar.ImmersionBar
 import com.zhengyuesoftware.linphone.R
 import com.zhengyuesoftware.linphone.kotlin.utils.app_api.ExitAPPUtil
+import com.zhengyuesoftware.linphone.kotlin.window.ui.login_module.login_window.view.fragment.LoginFragment
 import es.dmoral.toasty.Toasty
 import pub.devrel.easypermissions.AppSettingsDialog
 import pub.devrel.easypermissions.EasyPermissions
@@ -110,5 +113,29 @@ abstract class BaseActivity : AppCompatActivity(), EasyPermissions.PermissionCal
      */
     protected open fun onPermissionFail(){
 
+    }
+
+    /**
+     * 扩展函数getFragment可以获得当前显示的fragment盏中的fragment对象，例如有一个login的fragment，只需在activity的onBackPressed处理退出
+     */
+    @Suppress("UNCHECKED_CAST")
+    fun <F : Fragment> AppCompatActivity.getFragment(fragmentClass: Class<F>): F? {
+        val navHostFragment = this.supportFragmentManager.fragments.first() as NavHostFragment
+        navHostFragment.childFragmentManager.fragments.forEach {
+            if (fragmentClass.isAssignableFrom(it.javaClass)) {
+                return it as F
+            }
+        }
+
+        return null
+    }
+    override fun onBackPressed() {
+        //判断当前是哪个fragment
+        val fragment = getFragment(LoginFragment::class.java)
+        if (fragment != null){
+            finish()
+        }else{
+            super.onBackPressed()
+        }
     }
 }
